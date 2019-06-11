@@ -64,14 +64,14 @@ class Stocks extends Component {
     const { value, quantity, balance, day } = this.state
     return !this.state.gameOver ? (
       <React.Fragment>
-        <div className='container jumbotron p-5 m-auto'>
+        <div className='container jumbotron'>
           <div className='dayLabel' id='label'>
             Day : {day}
           </div>
           <div className='quantityLabel' id='label'>
             Quantity : {quantity}
           </div>
-          <div className='valBal d-flex justify-content-center'>
+          <div className='valBal d-flex justify-content-left'>
             <div className='valueLabel' id='label'>
               Value : {value}
             </div>
@@ -80,7 +80,7 @@ class Stocks extends Component {
             </div>
           </div>
         </div>
-        <div className='buttonContainer d-flex justify-content-center'>
+        <div className='buttonContainer d-flex justify-content-left'>
           <button className='buyStockButton m-2' onClick={this.buyStock}>
             Buy
             <i class='m-1 fas fa-shopping-cart' />
@@ -123,7 +123,13 @@ class Stocks extends Component {
         </button>
       </React.Fragment>
     ) : (
-      <p>Game Over!</p>
+      <div>
+        <p>Game Over!</p>
+        <button className='resetButton m-2 ' onClick={this.resetGame}>
+          Reset
+          <i className='m-1 fas fa-undo' />
+        </button>
+      </div>
     )
   }
 }

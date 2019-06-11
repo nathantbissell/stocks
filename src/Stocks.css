@@ -1,3 +1,7 @@
+:root {
+  background-color: #c6e2ff;
+}
+
 .dayLabel {
   font-size: 2em;
 }
@@ -11,7 +15,8 @@
 }
 
 .container {
-  text-align: center;
+  text-align: left;
+  max-width: 100%;
 }
 
 .buyStockButton {
