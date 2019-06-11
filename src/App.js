@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Switch, Route, Link, HashRouter } from 'react-router-dom'
 import Navbar from './Navbar'
 import Home from './Home.js'
-import Games from './Games'
 import Stocks from './Stocks'
 import './App.css'
 

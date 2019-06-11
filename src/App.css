@@ -11,12 +11,8 @@
 }
 body {
   background-color: --lightBlue;
-}
-
-h4 {
-  position: relative;
-  margin: 5px;
-  left: 50px;
+  font-family: 'Bitter', serif;
+  font-size: 2em;
 }
 
 .App {

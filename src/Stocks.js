@@ -1,26 +1,34 @@
 import React, { Component } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import './Stocks.css'
 
 class Stocks extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: 25,
-      day: 1,
-      quantity: 0,
-      balance: 100,
-      gameOver: false
+      value: 3,
+      day: 0,
+      quantity: 1,
+      balance: 10,
+      gameOver: false,
+      lowFunds: false,
+      quantityBarAlmostFull: false
     }
   }
 
   buyStock = () => {
+    if (this.state.balance < 25) {
+      this.toggleLowFunds()
+    }
     if (this.state.balance - this.state.value >= 0) {
       this.setState({
         quantity: this.state.quantity + 1,
         balance: this.state.balance - this.state.value
       })
     }
+
     this.triggerGameOver()
   }
 
@@ -49,19 +57,20 @@ class Stocks extends Component {
       })
     }
   }
+  toggleLowFunds = () => toast('Warning! Low on funds!')
 
   resetGame = () => {
     this.setState({
-      value: 25,
-      day: 1,
-      quantity: 0,
-      balance: 100,
+      value: 3,
+      day: 0,
+      quantity: 1,
+      balance: 10,
       gameOver: false
     })
   }
 
   render() {
-    const { value, quantity, balance, day } = this.state
+    const { value, quantity, balance, day, lowFunds } = this.state
     return !this.state.gameOver ? (
       <React.Fragment>
         <div className='container jumbotron'>
@@ -79,6 +88,7 @@ class Stocks extends Component {
               Balance : {balance}
             </div>
           </div>
+          <ToastContainer />
         </div>
         <div className='buttonContainer d-flex justify-content-left'>
           <button className='buyStockButton m-2' onClick={this.buyStock}>
