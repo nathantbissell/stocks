@@ -6,7 +6,7 @@ class Stocks extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: 1,
+      value: 25,
       day: 1,
       quantity: 0,
       balance: 100,
@@ -21,6 +21,7 @@ class Stocks extends Component {
         balance: this.state.balance - this.state.value
       })
     }
+    this.triggerGameOver()
   }
 
   sellStock = () => {
@@ -30,20 +31,40 @@ class Stocks extends Component {
         balance: this.state.balance + this.state.value
       })
     }
+    this.triggerGameOver()
   }
 
   advanceDay = () => {
     this.setState({
-      value: Math.floor(Math.random() * 100 + 1),
+      value: Math.floor(Math.random() * 101 + 0),
       day: this.state.day + 1
+    })
+    this.triggerGameOver()
+  }
+
+  triggerGameOver = () => {
+    if (this.state.value === 0 || this.state.balance === 0) {
+      this.setState({
+        gameOver: true
+      })
+    }
+  }
+
+  resetGame = () => {
+    this.setState({
+      value: 25,
+      day: 1,
+      quantity: 0,
+      balance: 100,
+      gameOver: false
     })
   }
 
   render() {
-    const { value, quantity, balance, day, gameOver } = this.state
-    return (
+    const { value, quantity, balance, day } = this.state
+    return !this.state.gameOver ? (
       <React.Fragment>
-        <div className='container p-5 m-auto'>
+        <div className='container jumbotron p-5 m-auto'>
           <div className='dayLabel' id='label'>
             Day : {day}
           </div>
@@ -77,7 +98,14 @@ class Stocks extends Component {
         <ProgressBar striped variant='success' now={value} label='VALUE' />
         <ProgressBar striped variant='info' now={quantity} label='QUANTITY' />
         <ProgressBar striped variant='danger' now={balance} label='BALANCE' />
+
+        <button className='resetButton m-2 ' onClick={this.resetGame}>
+          Reset
+          <i className='m-1 fas fa-undo' />
+        </button>
       </React.Fragment>
+    ) : (
+      <p>Game Over!</p>
     )
   }
 }

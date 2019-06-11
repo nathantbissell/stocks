@@ -13,14 +13,13 @@ export default class Navbar extends Component {
           {/* <img src={logo} alt='store' className='navbar-brand' /> */}
           <i className='fas fa-home nav-link' />
         </Link>
-        <ul className='navbar-nav align-items-center'>
+        {/* <ul className='navbar-nav align-items-center'>
           <li className='nav-item ml-5'>
-            <Link to='/games' className='nav-link'>
+            <Link to='/' className='nav-link'>
               Game
             </Link>
           </li>
-        </ul>
-        <Link to='/cart' className='ml-auto' />
+        </ul> */}
       </NavWrapper>
     )
   }
