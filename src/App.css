@@ -1,3 +1,24 @@
+:root {
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainWhite: #f3f3f3;
+  --mainDark: #232528;
+  --mainYellow: #ffa400;
+  --mainRed: #ff0000;
+  --mainGrey: #808080;
+  --babyBlue: #c6e2ff;
+  --navy: #003366;
+}
+body {
+  background-color: --lightBlue;
+}
+
+h4 {
+  position: relative;
+  margin: 5px;
+  left: 50px;
+}
+
 .App {
   text-align: center;
 }
@@ -21,6 +42,24 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.button-choice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.daily-stats {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  position: relative;
+  left: 50vh;
+}
+
+.title {
+  color: white;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
