@@ -34,7 +34,7 @@ class Stocks extends Component {
 
   advanceDay = () => {
     this.setState({
-      value: Math.floor(Math.random() * 100),
+      value: Math.floor(Math.random() * 100 + 1),
       day: this.state.day + 1
     })
   }
@@ -74,7 +74,9 @@ class Stocks extends Component {
             <i className='m-1 fas fa-arrow-alt-circle-right' />
           </button>
         </div>
-        <ProgressBar now={60} />
+        <ProgressBar striped variant='success' now={value} label='VALUE' />
+        <ProgressBar striped variant='info' now={quantity} label='QUANTITY' />
+        <ProgressBar striped variant='danger' now={balance} label='BALANCE' />
       </React.Fragment>
     )
   }
