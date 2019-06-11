@@ -95,9 +95,27 @@ class Stocks extends Component {
             <i className='m-1 fas fa-arrow-alt-circle-right' />
           </button>
         </div>
-        <ProgressBar striped variant='success' now={value} label='VALUE' />
-        <ProgressBar striped variant='info' now={quantity} label='QUANTITY' />
-        <ProgressBar striped variant='danger' now={balance} label='BALANCE' />
+        <ProgressBar
+          striped
+          variant='success'
+          now={value}
+          label='VALUE'
+          className='valueBar m-3'
+        />
+        <ProgressBar
+          striped
+          variant='info'
+          now={quantity}
+          label='QUANTITY'
+          className='quantityBar m-3'
+        />
+        <ProgressBar
+          striped
+          variant='danger'
+          now={balance / 20}
+          label='BALANCE'
+          className='balanceBar m-3'
+        />
 
         <button className='resetButton m-2 ' onClick={this.resetGame}>
           Reset
