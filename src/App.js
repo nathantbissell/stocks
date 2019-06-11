@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link, HashRouter } from 'react-router-dom'
 import Navbar from './Navbar'
 import Home from './Home.js'
 import Games from './Games'
@@ -9,14 +9,13 @@ import './App.css'
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <HashRouter>
         <Navbar />
-        <Stocks />
-        {/* <Switch>
+        <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/games' component={Games} />
-        </Switch> */}
-      </React.Fragment>
+          <Route exact path='/stocks' component={Stocks} />
+        </Switch>
+      </HashRouter>
     )
   }
 }
