@@ -28,7 +28,6 @@ class Stocks extends Component {
         balance: this.state.balance - this.state.value
       })
     }
-
     this.triggerGameOver()
   }
 
@@ -75,19 +74,19 @@ class Stocks extends Component {
       <React.Fragment>
         <div className='container jumbotron'>
           <div className='dayLabel' id='label'>
-            Day : {day}
+            <i class='far fa-calendar-alt' /> Day : {day}
           </div>
           <div className='quantityLabel' id='label'>
-            Quantity : {quantity}
+            <i class='fas fa-coins' /> Quantity : {quantity}
           </div>
-          <div className='valBal d-flex justify-content-left'>
-            <div className='valueLabel' id='label'>
-              Value : {value}
-            </div>
-            <div className='balanceLabel' id='label'>
-              Balance : {balance}
-            </div>
+
+          <div className='valueLabel' id='label'>
+            <i class='fas fa-chart-line' /> Value : {value}
           </div>
+          <div className='balanceLabel' id='label'>
+            <i className='fas fa-money-bill' /> Balance : {balance}
+          </div>
+
           <ToastContainer />
         </div>
         <div className='buttonContainer d-flex justify-content-left'>
