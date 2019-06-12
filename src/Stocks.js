@@ -13,8 +13,7 @@ class Stocks extends Component {
       quantity: 1,
       balance: 10,
       gameOver: false,
-      lowFunds: false,
-      quantityBarAlmostFull: false
+      lowFunds: false
     }
   }
 
@@ -39,6 +38,12 @@ class Stocks extends Component {
       })
     }
     this.triggerGameOver()
+    if (this.state.balance > 1500) {
+      this.qualityBanner()
+    }
+    if (this.state.balance >= 2000) {
+      this.winBanner()
+    }
   }
 
   advanceDay = () => {
@@ -56,7 +61,9 @@ class Stocks extends Component {
       })
     }
   }
-  toggleLowFunds = () => toast('Warning! Low on funds!')
+  toggleLowFunds = () => toast.error('Warning! Low on funds!')
+  qualityBanner = () => toast.info("You're almost there!")
+  winBanner = () => toast.success('You won! Congrats!')
 
   resetGame = () => {
     this.setState({
