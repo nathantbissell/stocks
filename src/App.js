@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route, Link, HashRouter } from 'react-router-dom'
+import { Switch, Route, HashRouter } from 'react-router-dom'
 import Navbar from './Navbar'
 import Home from './Home.js'
 import Stocks from './Stocks'

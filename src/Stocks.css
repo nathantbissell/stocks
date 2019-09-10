@@ -1,26 +1,68 @@
-:root,
+:root {
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainWhite: #f3f3f3;
+  --mainDark: #232528;
+  --mainYellow: #ffa400;
+  --mainRed: #ff0000;
+  --mainGrey: #808080;
+  --darkGrey: #373b44;
+  --babyBlue: #c6e2ff;
+  /*  */
+  --navy: #141f3a;
+  --purp: #42142f;
+  --lightGrey: #dbdbdb;
+  --drk: #151515;
+  --lightBlue: #246079;
+}
 body {
-  background-color: #c6e2ff;
+  background-color: var(--mainDark) !important;
+}
+
+.chart {
+  color: #000;
 }
 
 .dayLabel {
   font-size: 2em;
+  color: var(--mainWhite);
 }
 
 .quantityLabel {
-  color: red;
-  font-weight: 700;
+  color: var(--purp);
 }
 .valueLabel {
   color: green;
+}
+.balanceLabel {
+  color: var(--mainBlue);
 }
 
 .container {
   text-align: left;
   max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.jumbotron {
+  margin: 5px;
+  background-color: var(--mainGrey) !important;
+  border: 3px solid white;
+}
+
+.game-over {
+  color: #fff;
+  text-align: center;
+  margin: 100px;
+  justify-content: center;
+  border-style: solid;
+  border-width: 5px;
 }
 
 .buyStockButton {
+  width: 150px;
+  height: 60px;
   -moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
   -webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
   box-shadow: inset 0px 1px 0px 0px #bbdaf7;
@@ -69,10 +111,12 @@ body {
   background-color: #378de5;
 }
 .buyStockButton:active {
-  position: relative;
+  /* position: relative; */
   top: 1px;
 }
 .sellStockButton {
+  width: 150px;
+  height: 60px;
   -moz-box-shadow: inset 0px 1px 0px 0px #f5978e;
   -webkit-box-shadow: inset 0px 1px 0px 0px #f5978e;
   box-shadow: inset 0px 1px 0px 0px #f5978e;
@@ -121,11 +165,13 @@ body {
   background-color: #c62d1f;
 }
 .sellStockButton:active {
-  position: relative;
+  /* position: relative; */
   top: 1px;
 }
 
 .advanceButton {
+  width: 150px;
+  height: 60px;
   -moz-box-shadow: inset 0px 1px 0px 0px #d9fbbe;
   -webkit-box-shadow: inset 0px 1px 0px 0px #d9fbbe;
   box-shadow: inset 0px 1px 0px 0px #d9fbbe;
@@ -174,7 +220,7 @@ body {
   background-color: #a5cc52;
 }
 .advanceButton:active {
-  position: relative;
+  /* position: relative; */
   top: 1px;
 }
 
@@ -227,10 +273,12 @@ body {
   background-color: #f6f6f6;
 }
 .resetButton:active {
-  position: relative;
+  /* position: relative; */
   top: 1px;
 }
 
 #label {
-  margin: 5px;
+  margin: 0.3em;
+  font-size: 1em;
+  /* color: #000; */
 }

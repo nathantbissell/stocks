@@ -6,13 +6,52 @@
   --mainYellow: #ffa400;
   --mainRed: #ff0000;
   --mainGrey: #808080;
+  --darkGrey: #373b44;
   --babyBlue: #c6e2ff;
   --navy: #003366;
+  --purp: #452b49;
+  --lightGrey: #b4aab6;
 }
 body {
   background-color: --lightBlue;
+  margin: 0px;
   font-family: 'Bitter', serif;
   font-size: 2em;
+}
+.home {
+  background-image: url('bull_md.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 0;
+}
+.home-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.home-desc {
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  text-align: left;
+  margin: 1em;
+}
+
+.home-objective {
+  text-align: center;
+  margin: 1em;
+  color: var(--lightGrey);
+  font-weight: 300;
+  z-index: 10;
 }
 
 .App {
@@ -56,13 +95,4 @@ body {
 .title {
   color: white;
   text-align: center;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
